@@ -1,0 +1,22 @@
+<h1>Countries</h1>
+<%#= @headers.inspect %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Capital</th>
+      <th>Population</th>
+      <th>Country Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @countries.each do |country| %>
+      <tr>
+        <td><%= link_to country["name"], country_path(country["alpha2Code"]) %></td>
+        <td><%= country["capital"] %></td>
+        <td><%= country["population"] %></td>
+        <td><%= country["alpha2Code"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
